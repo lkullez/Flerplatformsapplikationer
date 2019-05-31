@@ -47,14 +47,6 @@ p.lead {
   font-weight: 400;
 }
 
-.dev-icons {
-  font-size: 3rem;
-}
-
-.dev-icons .list-inline-item i:hover {
-  color: #BD5D38;
-}
-
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 800;
   letter-spacing: 0.05rem;
@@ -148,15 +140,15 @@ section.main-section .main-item .main-date {
 }
 
 .bg-primary {
-  background-color: #BD5D38 !important;
+  background-color: #64b2ff !important;
 }
 
 .text-primary {
-  color: #BD5D38 !important;
+  color: #64b2ff !important;
 }
 
 a {
-  color: #BD5D38;
+  color: #64b2ff;
 }
 
 a:hover, a:focus, a:active {
