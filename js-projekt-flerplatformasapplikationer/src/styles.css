@@ -1,9 +1,4 @@
-/*!
- * Start Bootstrap - main v5.0.6 (https://startbootstrap.com/template-overviews/main)
- * Copyright 2013-2019 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-main/blob/master/LICENSE)
- */
-
+ @import '~bootstrap/dist/css/bootstrap.min.css';
 body {
   font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   padding-top: 54px;
