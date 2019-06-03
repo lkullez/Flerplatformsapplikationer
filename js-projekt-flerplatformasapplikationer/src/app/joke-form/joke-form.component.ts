@@ -8,8 +8,8 @@ import { HttpClient } from '@angular/common/http'
 })
 export class JokeFormComponent implements OnInit {
 
-  category: string = "";
-  blacklist: string = "";
+  category: string = " ";
+  blacklist: string = " ";
   response: any;
 
   constructor(private http: HttpClient) { }

@@ -1,9 +1,17 @@
-<h4>Joke category:</h4>
-<input type="text" [(ngModel)]="category">
-<h4>Blacklist topics:</h4>
-<input type="radio" [(ngModel)]="blacklist" value="political">Politics
-<input type="radio" [(ngModel)]="blacklist" value="nsfw">NSFW
-<input type="radio" [(ngModel)]="blacklist" value="religious">Religious<br><br>
-<button (click)="search()">Search</button><hr>
 
+  <h4>Joke category:</h4>
+  <select [(ngModel)]="category">
+    <option value="Dark">Dark
+    <option value="Programming">Programming
+    <option value="Miscellaneous">Miscellaneous
+  </select>
+  <h4>Blacklist topics:</h4>
+  <input type="radio" [(ngModel)]="blacklist" value="political">Politics
+  <input type="radio" [(ngModel)]="blacklist" value="nsfw">NSFW
+  <input type="radio" [(ngModel)]="blacklist" value="religious">Religious<br><br>
+  <button (click)="search()">Search</button><hr>
+
+
+<div *ngIf="response">
 <h2>{{response.joke}}{{response.setup}}<br><span class="text-primary">{{response.delivery}}</span></h2>
+</div>
