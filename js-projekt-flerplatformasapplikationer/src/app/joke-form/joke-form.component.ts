@@ -19,6 +19,7 @@ export class JokeFormComponent implements OnInit {
 
   search(){
     let data = this.http.get('https://sv443.net/jokeapi/category/' + this.category + '?blacklistFlags=' + this.blacklist);
+    console.log(data)
     data.subscribe((response) => {
       this.response = response;
       console.log(this.response)
