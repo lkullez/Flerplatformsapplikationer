@@ -59,23 +59,42 @@
 
     <section class="main-section p-3 p-lg-5 d-flex justify-content-center" id="section">
       <div class="w-100">
-        <h2 class="mb-5">Section</h2>
+        <h1 class="mb-5">Not funny? <span class="text-primary">No problem!</span></h1>
+        <form>
+          <div class="form-group">
+            <label for="category">Category:</label>
+            <select class="form-control" id="category" placeholder="Choose category">
+              <option vlaue="Miscellaneous">Miscellaneous</option>
+              <option vlaue="Programming">Programming</option>
+            </select>
+
+          </div>
+          <div class="form-group">
+            <label>Blacklist jokes:</label><br>
+            <input type="radio" name="blacklist" value="nsfw">NSFW
+            <input type="radio" name="blacklist" value="religious">Religious
+            <input type="radio" name="blacklist" value="political">Political
+          </div>
+          <button type="submit" class="btn btn-primary">Get joke!</button>
+        </form><br>
 
         <div class="main-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="main-content">
-            <h3 class="mb-0">Sub section</h3>
-            <p>Subtext</p>
-          </div>
+            <h3 class="mb-0">Insert joke here...</h3>
+          <p>Subtext</p>
+        </div>
           <div class="main-date text-md-right">
             <span class="text-primary">Sidetext</span>
           </div>
         </div>
 
+        <h2 class="mb-5">History</h2>
+
         <div class="main-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="main-content">
-            <h3 class="mb-0">Sub section</h3>
-          <p>Subtext</p>
-        </div>
+            <h3 class="mb-0">Current joke</h3>
+            <p>Subtext</p>
+          </div>
           <div class="main-date text-md-right">
             <span class="text-primary">Sidetext</span>
           </div>
