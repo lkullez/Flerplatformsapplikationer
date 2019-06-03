@@ -1,11 +1,12 @@
 
   <h4>Joke category:</h4>
   <select [(ngModel)]="category">
+    <option disabled selected value> -- select an option -- </option>
     <option value="Dark">Dark
     <option value="Programming">Programming
     <option value="Miscellaneous">Miscellaneous
   </select>
-  <h4>Blacklist topics:</h4>
+  <h4><br>Blacklisted topics:</h4>
   <input type="radio" [(ngModel)]="blacklist" value="political">Politics
   <input type="radio" [(ngModel)]="blacklist" value="nsfw">NSFW
   <input type="radio" [(ngModel)]="blacklist" value="religious">Religious<br><br>
