@@ -21,7 +21,7 @@ export class JokeFormComponent implements OnInit {
 
     let storage = JSON.parse(localStorage.getItem('joke'));
 
-    console.log(storage)
+    console.log(storage[0].setup)
 
 
   }
