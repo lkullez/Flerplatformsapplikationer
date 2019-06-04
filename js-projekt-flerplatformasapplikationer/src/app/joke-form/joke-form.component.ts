@@ -35,8 +35,11 @@ export class JokeFormComponent implements OnInit {
 
 
       this.newJoke.single = this.response.joke;
-      this.newJoke.setup = this.response.setup + " ";
-      this.newJoke.delivery = this.response.delivery;
+      if (this.response.type == "twopart"){
+        this.newJoke.setup = this.response.setup + " ";
+        this.newJoke.delivery = this.response.delivery;
+      }
+
       console.log(this.jokes)
       this.jokes.push(joke);
       this.newJoke = new Joke();
