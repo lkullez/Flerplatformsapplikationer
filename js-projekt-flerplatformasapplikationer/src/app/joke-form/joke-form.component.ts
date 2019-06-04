@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Joke } from 'src/app/joke.ts'
+import { Joke } from '../Joke'
 
 @Component({
   selector: 'app-joke-form',
@@ -9,10 +9,11 @@ import { Joke } from 'src/app/joke.ts'
 })
 export class JokeFormComponent implements OnInit {
 
+  jokes: Joke[] = [];
   category: string = " ";
   blacklist: string = " ";
   response: any;
-  //jokes: Array<{Joke}> = [];
+  newJoke: Joke = new Joke();
 
   constructor(private http: HttpClient) { }
 
@@ -24,14 +25,22 @@ export class JokeFormComponent implements OnInit {
       console.log("error")
     }
     let data = this.http.get('https://sv443.net/jokeapi/category/' + this.category + '?blacklistFlags=' + this.blacklist);
-    console.log(data)
+    //console.log(data)
     data.subscribe((response) => {
       this.response = response;
-      console.log(this.response)
-      /*let joke = new Joke();
-      joke.content = this.response.joke;
+      //console.log(this.response)
+
+
+      let joke = this.newJoke;
+
+
+      this.newJoke.single = this.response.joke;
+      this.newJoke.setup = this.response.setup + " ";
+      this.newJoke.delivery = this.response.delivery;
+      console.log(this.jokes)
       this.jokes.push(joke);
-      console.log(jokes)*/
+      this.newJoke = new Joke();
+
     })
   }
 
