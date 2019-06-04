@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Joke } from '../joke'
+import { Joke } from '../Joke'; //Låt vara
 
 @Component({
   selector: 'app-joke-form',
@@ -14,47 +14,58 @@ export class JokeFormComponent implements OnInit {
   blacklist: string = " ";
   response: any;
   newJoke: Joke = new Joke();
+  storage: [];
+  length: number = 0;
+  res = [];
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
 
-    let storage = JSON.parse(localStorage.getItem('joke'));
+    this.length = JSON.parse(localStorage.getItem('length'));
+    this.storage = JSON.parse(localStorage.getItem('joke'));
+    console.log(this.storage)
 
-    console.log(storage[0].setup)
 
+
+    for (let y = 0; y < this.length; y++){
+      this.res.push(y);
+      this.jokes.push(this.storage[y]);
+    }
 
   }
+
 
   search(){
     if(this.category == " "){
       console.log("error")
     }
     let data = this.http.get('https://sv443.net/jokeapi/category/' + this.category + '?blacklistFlags=' + this.blacklist);
-    //console.log(data)
     data.subscribe((response) => {
       this.response = response;
-      //console.log(this.response)
-
 
       let joke = this.newJoke;
 
-
       this.newJoke.single = this.response.joke;
       if (this.response.type == "twopart"){
+        console.log("true")
+        this.newJoke.single = "";
         this.newJoke.setup = this.response.setup + " ";
         this.newJoke.delivery = this.response.delivery;
       }
 
-      console.log(this.jokes)
       this.jokes.push(joke);
       this.newJoke = new Joke();
-
+      console.log(this.jokes)
       let storedJokes;
 
       storedJokes = this.jokes;
 
+
       localStorage.setItem('joke', JSON.stringify(storedJokes));
+      this.length++;
+      localStorage.setItem('length', JSON.stringify(this.length));
+
 
     })
   }

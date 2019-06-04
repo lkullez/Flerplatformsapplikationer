@@ -12,13 +12,11 @@
   <input type="radio" [(ngModel)]="blacklist" value="religious">Religious<br><br>
   <button (click)="search()">Search</button><hr>
 
-{{storage}}
 <div *ngIf="response">
   <h2>{{response.joke}}{{response.setup}}<br><span class="text-primary">{{response.delivery}}</span></h2>
+</div>
   <br><h3>History:</h3><br>
-  <ul class="list-group" *ngFor="let joke of jokes">
-    <li class="list-group-item"><p>{{joke.single}}{{joke.setup}}<br><span class="text-primary">{{joke.delivery}}</span></p>
+  <ul class="list-group" *ngFor="let i of res">
+    <li class="list-group-item"><h2>{{storage[i].single}}{{storage[i].setup}}<br><span class="text-primary">{{storage[i].delivery}}</span></h2>
     </li>
   </ul>
-
-</div>
