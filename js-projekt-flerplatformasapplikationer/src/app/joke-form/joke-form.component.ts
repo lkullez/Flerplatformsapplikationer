@@ -18,6 +18,12 @@ export class JokeFormComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
+
+    let storage = JSON.parse(localStorage.getItem('joke'));
+
+    console.log(storage)
+
+
   }
 
   search(){
@@ -43,6 +49,12 @@ export class JokeFormComponent implements OnInit {
       console.log(this.jokes)
       this.jokes.push(joke);
       this.newJoke = new Joke();
+
+      let storedJokes;
+
+      storedJokes = this.jokes;
+
+      localStorage.setItem('joke', JSON.stringify(storedJokes));
 
     })
   }

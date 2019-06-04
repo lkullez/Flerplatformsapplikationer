@@ -2,7 +2,7 @@
   <h4>Joke category:</h4>
   <select [(ngModel)]="category">
     <option disabled selected value> -- select an option -- </option>
-    <option value="Dark">Dark
+    <option value="Dark">Dark - warning: VERY dark
     <option value="Programming">Programming
     <option value="Miscellaneous">Miscellaneous
   </select>
@@ -14,10 +14,11 @@
 
 
 <div *ngIf="response">
+  <h2>{{response.joke}}{{response.setup}}<br><span class="text-primary">{{response.delivery}}</span></h2>
+  <br><h3>History:</h3><br>
   <ul class="list-group" *ngFor="let joke of jokes">
     <li class="list-group-item"><h2>{{joke.single}}{{joke.setup}}<br><span class="text-primary">{{joke.delivery}}</span></h2>
     </li>
   </ul>
-<!--<h2>{{response.joke}}{{response.setup}}<br><span class="text-primary">{{response.delivery}}</span></h2>
--->
+
 </div>
