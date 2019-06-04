@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Joke } from '../Joke'
+import { Joke } from '../joke'
 
 @Component({
   selector: 'app-joke-form',
